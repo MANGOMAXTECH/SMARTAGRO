@@ -1,0 +1,50 @@
+/* AGROAGRO modern dashboard styles
+   - Glassmorphism, soft shadows, rounded corners
+   - Typography: Inter/Poppins (imported in Blade)
+*/
+
+:root{
+  --primary-green:#2fa84f;
+  --muted:#6b7280;
+  --card-bg: rgba(255,255,255,0.85);
+  --glass-bg: rgba(255,255,255,0.6);
+}
+
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#f7faf9;}
+
+.agro-header{background:transparent;border-bottom:1px solid rgba(15,23,42,0.04)}
+.page-title{font-weight:600}
+.page-subtitle{font-size:0.95rem}
+
+.agro-card{background:var(--card-bg);backdrop-filter:blur(6px);border:1px solid rgba(0,0,0,0.04);border-radius:16px}
+.agro-card .card-label{font-size:0.85rem;color:var(--muted)}
+.agro-card .card-value{font-weight:700}
+.icon-wrapper{width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, rgba(47,168,79,0.08), rgba(47,168,79,0.02));}
+
+.stats-grid .agro-card{padding:18px}
+.hover-up{transition:transform .15s ease,box-shadow .15s ease}
+.hover-up:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(2,6,23,0.08)}
+.rounded-lg{border-radius:16px}
+
+.search-box input{width:320px;max-width:40vw}
+.btn-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:10px}
+
+.activity-list li{padding:10px 0;border-bottom:1px dashed rgba(0,0,0,0.03);}
+.activity-list .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:10px}
+
+/* Responsive layout overrides for 4-column / 2-column / 1-column */
+@media (min-width:1200px){ /* xl */ }
+@media (max-width:991px){ .search-box input{width:180px} }
+@media (max-width:767px){ .search-box{display:none}.page-subtitle{display:none} }
+
+/* DataTable tweaks */
+table.dataTable thead th{background:transparent}
+
+/* small utility colors */
+.text-green{color:var(--primary-green)}
+
+/* maintain AdminLTE compatibility */
+.content-wrapper{padding:20px}
+
+/* Ensure visuals match requested rounded corners more prominently */
+.agro-card{border-radius:20px}
